@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 id="keyword"><%= keyword %></h1>
+
+    <table id="adresTable">
+      <tr>
+        <th>seq</th>
+        <th>매장명</th>
+        <th>주소</th>
+        <th>위경도</th>
+        <th>확인주소</th>
+      </tr>
+      <tbody>
+      <% item.forEach((element, index) => { %>
+      <tr>
+        <td id="seq<%= index %>"><%= element.MRHST_SEQ %></td>
+        <td><%= element.MRHST_NM %></td>
+        <td id="adres<%= index %>"><%= element.ADRES %></td>
+        <td id="coord<%= index %>"></td>
+        <td id="check<%= index %>"></td>
+      </tr>
+      <% }) %>
+      </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <script src='/javascripts/script.js'></script>
+
+  </body>
+</html>
